@@ -6,4 +6,7 @@
 - They also need to write the setAndPrintScore that will be called given all the answers
 - They must go from one answer to the next one checking if the answer is correct
 - Using ifs or one loop and one if. The are plenty of ways.
-- some 
+- At the end they need to call one last function that will display the score
+
+No callbacks, no scope issues, nothing advanced at all.
+I attached to ```window``` the functions that they need.

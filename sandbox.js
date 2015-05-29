@@ -1,9 +1,10 @@
-createQuestion("say something", ["on answer", "another one"]);
-createQuestion("say something different", ["third answer", "fourth answer"]);
+createQuestion("Are you wearing shoes?", ["yes", "no"]);
+createQuestion("Do you like donuts?", ["yes", "no"]);
+createQuestion("What sports do you like?", ["hockey", "football", "beer pong", "table tennis"]);
 
 var setAndPrintScore = function (answers) {
 	var score = 0;
-
+	debugger;
 	if (answers[0] == 1) {
 		score = score + 1;
 	}

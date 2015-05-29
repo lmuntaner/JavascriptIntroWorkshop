@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Quiz Time!</title>
+
+    <!-- CSS Bootstrap -->
+    <link href="helpers/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="helpers/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Custom styles for this site -->
+    <link href="helpers/style.css" rel="stylesheet">
+
+    <!-- Underscore library -->
+    <script type="text/javascript" src="helpers/underscore.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+        <div class="jumbotron margin-top">
+            <div class="quiz-intro">
+                <h1>Quiz Time</h1>
+                <p class="lead">Let's create a quiz at the same time that we are learning some javascript! Use the helper functions to create the questions!</p>
+                <p><a class="btn btn-lg btn-success" href="#" id="start-quiz" role="button">Start Quiz</a></p>
+            </div>
+            <div class="quiz-score hidden">
+                <h1>Score</h1>
+                <p class="lead">Congratulations! You finished the quiz, this is your score:</p>
+                <p><a class="btn btn-lg btn-success" id="score-display" href="#" role="button"></a></p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; Llorenç Muntaner, 2015</p>
+        </footer>
+
+    </div> <!-- /container -->
+
+    <script type="text/template" id="question-template">
+        <div class="my-modal question-<%= index %> hidden" index="<%= index %>">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Question</h4>
+                    </div>
+                    <form id="question-form-<%= index %>">
+                        <div class="modal-body">
+                            <h5><%= question %><h5>
+                                    <% for(var i = 0; i < answers.length; i++) { %>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios<%= i + 1 %>" value="<%= i + 1 %>"><%= answers[i] %>
+                                            </label>
+                                        </div>
+                                    <% } %>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="Send" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- JS File with helpers -->
+    <script type="text/javascript" src="helpers/helper_functions.js"></script>
+
+    <!-- Sandbox -->
+    <script type="text/javascript" src="sandbox.js"></script>
+  </body>
+</html>

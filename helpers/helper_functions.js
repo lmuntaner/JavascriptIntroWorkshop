@@ -5,7 +5,7 @@
 	}
 
 	var Quiz = function () {
-		this.questionIds = [];
+		this.element = document.querySelectorAll(".my-modal")[0];
 		this.questions = [];
 		this.answers = [];
 		this.currentQuestionIndex = 0;
@@ -26,7 +26,9 @@
 		var quizScoreEl = document.querySelectorAll(".quiz-score")[0];
 		removeClass(quizScoreEl, "hidden");
 		addClass(quizIntroEl, "hidden");
-		setAndPrintScore(this.answers);
+		addClass(this.element, "hidden");
+		var percentageScore = calculateScore(this.answers);
+		printScore(percentageScore);
 	};
 
 	Quiz.prototype.createQuestion = function (questionString, answers) {
@@ -40,9 +42,7 @@
 		}))[0];
 		this.questions.push(questionElement);
 
-		var bodyElement = document.querySelectorAll("body")[0];
-
-		bodyElement.appendChild(questionElement);
+		this.element.appendChild(questionElement);
 
 		var formElement = document.getElementById("question-form-" + index);
 		formElement.addEventListener("submit", this.sendAnswer.bind(this));
@@ -71,10 +71,12 @@
 		if (index > 0) {
 			addClass(this.questions[index - 1], "hidden");		
 		}
-		this.questions[index] = removeClass(this.questions[index], "hidden");
+		removeClass(this.questions[index], "hidden");
+		removeClass(this.questions[index], "hidden-left");
 	};
 
 	Quiz.prototype.startQuiz = function () {
+		removeClass(this.element, "hidden");
 		this.callNextQuestion();
 	};
 

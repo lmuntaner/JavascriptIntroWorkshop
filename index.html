@@ -45,29 +45,29 @@
 
     </div> <!-- /container -->
 
+    <div class="my-modal hidden">
+    </div>
     <script type="text/template" id="question-template">
-        <div class="my-modal question-<%= index %> hidden" index="<%= index %>">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Question</h4>
-                    </div>
-                    <form id="question-form-<%= index %>">
-                        <div class="modal-body">
-                            <h5><%= question %><h5>
-                                    <% for(var i = 0; i < answers.length; i++) { %>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios<%= i + 1 %>" value="<%= i + 1 %>"><%= answers[i] %>
-                                            </label>
-                                        </div>
-                                    <% } %>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="submit" value="Send" class="btn btn-primary">
-                        </div>
-                    </form>
+        <div class="modal-dialog hidden hidden-left">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Question</h4>
                 </div>
+                <form id="question-form-<%= index %>">
+                    <div class="modal-body">
+                        <h5><%= question %><h5>
+                                <% for(var i = 0; i < answers.length; i++) { %>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios<%= i + 1 %>" value="<%= i + 1 %>"><%= answers[i] %>
+                                        </label>
+                                    </div>
+                                <% } %>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Send" class="btn btn-primary">
+                    </div>
+                </form>
             </div>
         </div>
     </script>

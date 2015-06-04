@@ -13,15 +13,26 @@ div.my-modal {
 
 div.modal-dialog {
 	margin-top: 100px;
+	-webkit-transition: margin-left 1s ease-in-out;
+	-moz-transition: margin-left 1s ease-in-out;
+	-o-transition: margin-left 1s ease-in-out;
+	transition: margin-left 1s ease-in-out;
 }
 
-.modal-body h5 {
-	margin-bottom: 20px
+div.hidden-left {
+	margin-left: 0;
+}
+
+div.hidden-right {
+	margin-right: 0;
 }
 
 .hidden {
 	display: none;
-	margin-left: 0;
+}
+
+.modal-body h5 {
+	margin-bottom: 20px;
 }
 
 input[type=radio] {

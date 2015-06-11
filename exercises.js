@@ -2,7 +2,6 @@
 
 //EXERCISE 1
 //
-// Restore the comments marks (/* */) of the previous exercises. First two exercises have to be commented 
 // Uncomment the exercise code deleting /* and */ chars
 // Ask for the user's favourite food!
 // Give a different message back to the user if it chooses "salad"
@@ -19,7 +18,7 @@ var favoriteFood = prompt("What's your favorite food??");
 
 //EXERCISE 2
 //
-// Restore the comments marks (/* */) of the previous exercises. First two exercises have to be commented 
+// Restore the comments marks (/* */) of the previous exercises.
 // Uncomment the exercise code deleting /* and */ chars
 // Open the console and reload the index page to see the result of the code.
 // Write a function that takes an array of words and returns the length of the longest one.
@@ -35,6 +34,7 @@ console.log( maxLength === 6 );
 
 //EXERCISE 3
 //
+// Restore the comments marks (/* */) of the previous exercises.
 // Uncomment the exercise code deleting /* and */ chars
 // Open the console and reload the index page to see the result of the code.
 // Complete the following function to get the letter linked to a spanish DNI

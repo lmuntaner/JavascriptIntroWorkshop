@@ -21,14 +21,17 @@
 	};
 
 	Quiz.prototype.checkAnswers = function () {
-		addClass(this.questions[this.questions.length -1], "hidden");
+		var percentageScore = 0;
+		if (this.questions.length > 0) {
+			addClass(this.questions[this.questions.length -1], "hidden");
+			percentageScore = calculateScore(this.answers);			
+		}
 		var quizIntroEl = document.querySelectorAll(".quiz-intro")[0];
 		var quizScoreEl = document.querySelectorAll(".quiz-score")[0];
 		removeClass(quizScoreEl, "hidden");
 		addClass(quizIntroEl, "hidden");
 		addClass(this.element, "hidden");
-		var percentageScore = calculateScore(this.answers);
-		printScore(percentageScore);
+		printScore(percentageScore);			
 	};
 
 	Quiz.prototype.createQuestion = function (questionString, answers) {
